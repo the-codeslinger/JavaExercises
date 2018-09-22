@@ -1,0 +1,47 @@
+subprojects {
+    apply plugin: 'java'
+    group = 'com.thecodeslinger.javaexercise'
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        testCompile 'junit:junit:4.12'
+    }
+}
+
+project(':ExerciseUtilities') {
+
+}
+
+project(':Exercise-1') {
+    dependencies {
+        compile project(':ExerciseUtilities')
+    }
+}
+
+project(':Exercise-2') {
+    dependencies {
+        compile project(':ExerciseUtilities')
+    }
+}
+
+project(':Exercise-3') {
+    dependencies {
+        compile project(':ExerciseUtilities')
+    }
+}
+
+project(':Exercise-4') {
+    dependencies {
+        compile project(':ExerciseUtilities')
+    }
+}
+
+task copyJars(type: Copy) {
+    from subprojects.collect { it.tasks.withType(Jar) }
+    into "$buildDir/allJars"
+}
+
+gradle.buildFinished {
+    copyJars.execute()
+}
