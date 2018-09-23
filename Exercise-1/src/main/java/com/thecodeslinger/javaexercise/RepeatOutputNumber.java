@@ -15,7 +15,7 @@ public class RepeatOutputNumber extends AbstractExercise {
 			out.writeInputPrompt();
 			
 			int number = in.readInt();
-			IntStream.range(1, number + 1).forEach(c -> out.write(c));
+			IntStream.range(1, number + 1).forEach(c -> out.write(number));
 		}
 		catch (NumberFormatException e) {
 			out.writeError("Invalid input");
