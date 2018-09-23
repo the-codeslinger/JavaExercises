@@ -16,8 +16,8 @@ public class FibonacciSequencer {
      * internal state is updated to contain the current number as returned and the 
      * preceding two.
      * 
-     * @see FibonacciSequence#getPreviousNumber()
-     * @see FibonacciSequence#getCurrentNumber()
+     * @see FibonacciSequencer#getPreviousNumber()
+     * @see FibonacciSequencer#getCurrentNumber()
      */
     public int nextNumber() {
         int newCurrent = previous + current;
@@ -27,7 +27,7 @@ public class FibonacciSequencer {
     }
 
     /**
-     * Returns the Fibonacci number before {@link FibonacciSequence#getCurrentNumber()}
+     * Returns the Fibonacci number before {@link FibonacciSequencer#getCurrentNumber()}
      * (aka f-1).
      * 
      * <i>Note:</i> Right after initialization the current value is {@code 1} and
