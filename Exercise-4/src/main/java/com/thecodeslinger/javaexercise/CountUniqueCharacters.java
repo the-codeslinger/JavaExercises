@@ -30,13 +30,17 @@ public class CountUniqueCharacters extends AbstractExercise {
 	 * <i>Note:</i> This method is case sensitive.
 	 */
 	boolean containsOnlyUniqueCharacters(String s) {
-		final Set<Character> charLookup = new HashSet<>();
-		for (char c : s.toCharArray()) {
-			if (charLookup.contains(c)) {
-				return false;
-			}
-			charLookup.add(c);
-		}
-		return true;
+		if (null != s && !s.isEmpty()) {
+            final Set<Character> charLookup = new HashSet<>();
+            for (char c : s.toCharArray()) {
+                if (charLookup.contains(c)) {
+                    return false;
+                }
+                charLookup.add(c);
+            }
+            return true;
+        }
+
+		return false;
 	}
 }
